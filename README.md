@@ -1,8 +1,9 @@
-<center> <h4>Seja Bem Vindo(a), Somos a Cold Tech Solutions<h4/>
+<center> 
+  <h1>##Seja Bem Vindo(a), Somos a Cold Tech Solutions  <h1/>
 
 ![Cold Tech Logo Cortado](https://user-images.githubusercontent.com/125835466/229378370-f43af001-7f98-4ade-8337-5ad1edf9bc5d.jpg)
 
-:white_small_square: O que fazemos? <br/>
+<h4>:white_small_square: O que fazemos? <br/>
 Controle de Temperatura nos freezers e câmaras frigoríficas de carne :cow::clock1: <br/>
 
 :white_small_square: Qual nosso Objetivo? <br/>
@@ -11,5 +12,6 @@ Controle de Temperatura nos freezers e câmaras frigoríficas de carne :cow::clo
 
 :white_small_square: Quais são os Sensores utilizados? <br/>
 •	LM35 – Utilizado no monitoramento de temperatura :snowflake: <br/>
-•	LDR – Utilizado no monitoramento de luminosidade :bar_chart: <br/>
+•	LDR – Utilizado no monitoramento de luminosidade :bar_chart: <br/>h4/>
 <center/>
+  
