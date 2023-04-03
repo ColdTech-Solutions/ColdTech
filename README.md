@@ -12,6 +12,6 @@ Controle de Temperatura nos freezers e câmaras frigoríficas de carne :cow::clo
 
 :white_small_square: Quais são os Sensores utilizados? <br/>
 •	LM35 – Utilizado no monitoramento de temperatura :snowflake: <br/>
-•	LDR – Utilizado no monitoramento de luminosidade :bar_chart: <br/>h4/>
+•	LDR – Utilizado no monitoramento de luminosidade :bar_chart: <br/> <h4/>
 <center/>
   
