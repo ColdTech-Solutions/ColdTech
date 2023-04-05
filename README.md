@@ -4,7 +4,7 @@
 ![Cold Tech Logo Cortado](https://user-images.githubusercontent.com/125835466/229378370-f43af001-7f98-4ade-8337-5ad1edf9bc5d.jpg)
 
 <h4>:white_small_square: O que fazemos? <br/>
-Monitoramento de Temperatura nos freezers e câmaras frigoríficas de carne bovina :cow::clock1: <br/>
+•Monitoramento de Temperatura nos freezers e câmaras frigoríficas de carne bovina :cow::clock1: <br/>
 
 :white_small_square: Qual nosso Objetivo? <br/>
 • Promover melhorias no transporte e logística de armazenagem de carnes bovinas, por meio da utilização de sensores de temperatura :articulated_lorry: <br/>
