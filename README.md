@@ -7,11 +7,10 @@
 Controle de Temperatura nos freezers e câmaras frigoríficas de carne :cow::clock1: <br/>
 
 :white_small_square: Qual nosso Objetivo? <br/>
-• Promover melhorias no transporte e logística de armazenagem de carnes, por meio da utilização de sensores de luminosidade e temperatura :articulated_lorry: <br/>
+• Promover melhorias no transporte e logística de armazenagem de carnes, por meio da utilização de sensores de temperatura :articulated_lorry: <br/>
 • Visando uma melhora na qualidade e aspecto do produto :star:<br/>
 
 :white_small_square: Quais são os Sensores utilizados? <br/>
 •	LM35 – Utilizado no monitoramento de temperatura :snowflake: <br/>
-•	LDR – Utilizado no monitoramento de luminosidade :bar_chart: <br/> <h4/>
 <center/>
   
