@@ -1,5 +1,5 @@
 <center> 
-  <h1> ##Seja Bem Vindo(a), Somos a Cold Tech Solutions  <h1/>
+  <h1> Seja Bem Vindo(a), Somos a Cold Tech Solutions  <h1/>
 
 ![Cold Tech Logo Cortado](https://user-images.githubusercontent.com/125835466/229378370-f43af001-7f98-4ade-8337-5ad1edf9bc5d.jpg)
 
