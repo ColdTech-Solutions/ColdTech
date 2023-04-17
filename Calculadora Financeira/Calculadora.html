@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleCalculadora.css">
+    <title>Calculadora Financeira - ColdTech</title>
+</head>
+
+<body>
+    <div id="header">
+
+        <ul class="navBar">
+            <img id="logo" src="../logo coldtech recortado.png">
+            <li><a href="#">Home</a></li>
+            <li class="simulador">Simulador</li>
+            <li>|</li>
+            <li><a href="#">Login</a></li>
+            <li> <a href="#">Cadastro</a></li>
+
+        </ul>
+    </div>
+    <br>
+
+    <div class="nomeEmpresa">
+
+        <h1>Faça sua simulação conosco:</h1>
+
+    </div> <br>
+
+    <div class="container">
+        <div class="inputs">
+            <span>Insira o Nome da Empresa:</span> <br> <input type="text" id="input_nome"
+                placeholder="Nome da Empresa"> <br><br>
+            <span>Insira o corte/tipo de carne:</span> <br> <input type="text" id="input_tipocarne"
+                placeholder="Corte da Carne"><br><br>
+            <span>Insira o custo do kg da carne:</span> <br><input type="number" id="input_valorcarne"
+                placeholder="Preço do Kg">
+            <br><br>
+            <span>Insira a quantidade de carne em estoque (em kg):</span> <br> <input type="number" id="input_estoque"
+                placeholder="Quantidade em estoque"> <br>
+
+            <button onclick="analise()">Analise de perda</button> <br /> <br />
+        </div>
+    </div>
+
+    <div id="div_result"> </div> <br><br>
+
+    <center>
+        <h4> ColdTech Solutions Inc.® - Todos os direitos reservados.</h4>
+    </center>
+
+</body>
+
+</html>
+<Script>
+    function analise() {
+        var nome = input_nome.value;
+        var tipo = input_tipocarne.value;
+        var valor = Number(input_valorcarne.value);
+        var estoque = Number(input_estoque.value);
+        var taxa = Number(0.09);
+        var taxaP = Number(0.90);
+
+        var Valor_Estoque = (valor * estoque);
+        var Perda_Semanal = (Valor_Estoque * taxa);
+        var Perda_Mensal = (Perda_Semanal * 4);
+        var Perda_Anual = (Perda_Mensal * 12);
+
+        var Perda_SemanalP = (Perda_Semanal * taxaP);
+        var Perda_MensalP = (Perda_SemanalP * 4);
+        var Perda_AnualP = (Perda_MensalP * 12);
+
+        div_result.innerHTML = `
+            Levando em consideração o corte "${tipo}", aproximadamente, as perdas da empresa ${nome} são: <br/> <br/>
+            Perda Semanal: R$${Perda_Semanal} reais, (base para cálculo: 9% do valor de R$${Valor_Estoque} reais de seu estoque); <br/>
+            Perda Mensal: R$${Perda_Mensal} reais; <br/>
+            Perda Anual: R$${Perda_Anual} reais; <br/> <br/>
+            
+            Com o nosso serviço, a empresa ${nome} poderá minimizar suas perdas em até 90%, e seriam economizados até: <br/>
+             R$${Perda_SemanalP} reais por semana; <br/>
+             R$${Perda_MensalP} reais por mês; <br/>
+             R$${Perda_AnualP} reais por ano. <br/> <br/> <br/> 
+
+             *Esses valores são calculados levando em consideração que após a compra do nosso produto, 
+             o gestor terá acesso à maiores informações que o ajudarão na tomada de decisão`
+
+    }
+
+</Script>
