@@ -7,6 +7,11 @@ nome VARCHAR(45),
 cnpj VARCHAR(18)
 );
 
+ALTER TABLE empresa MODIFY COLUMN cnpj VARCHAR(18);
+
+INSERT INTO empresa VALUES
+(NULL, 'Empresa da Giba', '00.000.000/0000-00');
+
 CREATE TABLE usuario(
 idUsuario INT,
 nome VARCHAR(45),
@@ -17,6 +22,9 @@ fkEmpresa INT,
 CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
 CONSTRAINT pkComposta PRIMARY KEY (idUsuario, fkEmpresa)
 );
+
+INSERT INTO usuario VALUES
+(1, 'Giovanna', 'giovanna@gmail.com', 'giba123', '00.000.000/0000-00', 1);
 
 CREATE TABLE sensor(
 idSensor INT,
@@ -46,4 +54,6 @@ dataHora DATETIME,
 CONSTRAINT pkComposta PRIMARY KEY (idMedicao, fkSensor)
 );
 
+SELECT * FROM usuario;
 
+SELECT * FROM usuario JOIN empresa ON idEmpresa = fkEmpresa;
