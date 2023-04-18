@@ -18,7 +18,7 @@
     <!--header inicio-->
     <div class="header">
         <div class="container">
-            <h1 class="titulo_img"><img src="img/communication-removebg-preview.png" alt="" ></h1>
+            <h1 class="titulo_img"><img src="img/communication__3_-removebg-preview.png" alt=""></h1>
             <ul class="navbar">
                 <li>
                     <a href="index.html">Home</a>
@@ -77,12 +77,67 @@
                         <br>
                     </div>
                     <button class="botao" onclick="cadastrar()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    
-                  
-                    
-                    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-                </body>
-                
-</html>
+<!--footer inicio-->
+<div class="footer">
+    <div class="container">
+        <h4>© Direitos reservados à ColdTech. 2023</h4>
+        <span class="version">v1.0.3</span>
+    </div>
+</div>
+<!--footer fim-->
+
+</body>
+<script>
+
+    function cadastrar() {
+        var email = email_input.value
+        var cnpj = cnpj_input.value
+        var senha = senha_input.value
+        var Csenha = confirmacao_senha_input.value
+        var nome = nome_input.value
+
+        if (email == `` || nome == `` || senha == `` || Csenha == `` || nome == ``) {
+            cardErro.style.display = `block`
+            mensagem_erro.innerHTML = `Por favor preencha todos os campos!`
+
+            
+            
+        } else if (email.indexOf('@') == -1 || email.indexOf('.com') == -1) {
+            cardErro.style.display = 'block'
+            mensagem_erro.innerHTML = `email inválido!`
+            
+        } else if (cnpj.lenght < 18 || senha.lenght < 8 || Csenha.lenght != senha) {
+            cardErro.style.display = 'block'
+            mensagem_erro.innerHTML = `Senha ou cnpj inválido`
+
+        } else {
+
+            cardErro.style.display = "block";
+
+            mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+            setTimeout(() => {
+                window.location = `login.html`;
+            }, "2000")
+
+        } 
+        
+
+    }
+
+    
+
+</script>

@@ -20,7 +20,7 @@
 
     <div class="header">
         <div class="container">
-            <h1 class="titulo_img"><img src="img/communication-removebg-preview.png" alt=""></h1>
+            <h1 class="titulo_img"><img src="img/communication__3_-removebg-preview.png" alt=""></h1>
            
             <ul class="navbar">
                 <li>
@@ -59,17 +59,12 @@
                     <br>
                     <div class="campo">
                         <span>Senha:</span>
-                        <input id="senha_input" type="text" placeholder="********">
+                        <input id="senha_input" type="password" placeholder="********">
                         <br>
                     </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
 
                 </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
                 <div id="div_erros_login"></div>
             </div>
         </div>
@@ -86,7 +81,7 @@
     <div class="footer">
         <div class="container">
             <h4>© Direitos reservados à ColdTech. 2023</h4>
-            <span class="version">v1.0.0</span>
+            <span class="version">v1.0.3</span>
         </div>
     </div>
     <!--footer fim-->
@@ -94,4 +89,43 @@
 </body>
 
 </html>
+
+<script>
+
+    function entrar() {
+        var email = email_input.value
+        var senha = senha_input.value
+
+        if (email == `` || senha == ``) {
+            cardErro.style.display = `block`
+            mensagem_erro.innerHTML = `Por favor preencha todos os campos!`
+
+            
+            
+        } else if (email.indexOf('@') == -1 || email.indexOf('.com') == -1) {
+            cardErro.style.display = 'block'
+            mensagem_erro.innerHTML = `email inválido!`
+            
+        } else if (senha.lenght < 8) {
+            cardErro.style.display = 'block'
+            mensagem_erro.innerHTML = `Senha inválida`
+
+        } else {
+
+            cardErro.style.display = "block";
+
+            mensagem_erro.innerHTML = "Login realizado com sucesso! Redirecionando para sua Home...";
+
+            setTimeout(() => {
+                window.location = `usuário.html`;
+            }, "2000")
+
+        } 
+        
+
+    }
+
+    
+
+</script>
 
