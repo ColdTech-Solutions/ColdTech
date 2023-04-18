@@ -30,11 +30,9 @@ CREATE TABLE sensor(
 idSensor INT,
 nome VARCHAR(10),
 tipo VARCHAR(45),
-fkEmpresa INT,
-CONSTRAINT fkEmpresaaa FOREIGN KEY (fkEmpresa) REFERENCES empresa (idEmpresa),
 fkLocalSensor INT,
 CONSTRAINT fkLocalSensor FOREIGN KEY (fkLocalSensor) REFERENCES localSensor (idLocal),
-CONSTRAINT pkComposta PRIMARY KEY (idSensor, fkEmpresa, fkLocalSensor)
+CONSTRAINT pkComposta PRIMARY KEY (idSensor, fkLocalSensor)
 );
 
 CREATE TABLE localSensor(
