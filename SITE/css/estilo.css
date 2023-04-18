@@ -93,6 +93,8 @@ body { /*CSS DA PAGINA INTEIRA*/
   background-color: #e5e5e5;
   display: flex; 
   justify-content: space-between;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 .social .container {
@@ -105,8 +107,9 @@ body { /*CSS DA PAGINA INTEIRA*/
 
 .social .container .boxes {
   display: flex;
-  justify-content: space-between;
-  width: 100%;   
+  flex-direction: column  ;
+  width: 100%;  
+  align-items: center; 
 }
 
 .box {
