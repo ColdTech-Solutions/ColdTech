@@ -11,6 +11,7 @@
     <link rel="icon" href="../img/communication__3_-removebg-preview.png">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/styleSimulador.css">
    
 </head>
 
@@ -19,7 +20,7 @@
     <!--header inicio-->
     <div class="header">
         <div class="container">
-            <h1 class="titulo_img"><img src="img/communication-removebg-preview.png" alt=""></h1>
+            <h1 class="titulo_img"><img src="img/communication-removebg-preview.png"></h1>
             <ul class="navbar">
                 <li>
                     <a href="./index.html">Home</a>
@@ -38,32 +39,27 @@
 
 
     <!-- simulador inicio -->
-    <div class="simulador">
-        <div class="container">
-            <h2>Simulador</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
 
-        </div>
-    </div>
+    <h2 class="pagina">Simulador Financeiro</h2>
+        <div id="containerSimulador">
+           
+            <div class="inputs">
+                <span>Insira o Nome da Empresa:</span> <br> <input type="text" id="input_nome"
+                    placeholder="Nome da Empresa"> <br><br>
+                <span>Insira o corte/tipo de carne:</span> <br> <input type="text" id="input_tipocarne"
+                    placeholder="Corte da Carne"><br><br>
+                <span>Insira o custo do kg da carne:</span> <br><input type="number" id="input_valorcarne"
+                    placeholder="Preço do Kg">
+                <br><br>
+                <span>Insira a quantidade de carne em estoque:</span> <br> <input type="number" id="input_estoque"
+                    placeholder="Quantidade em estoque"> <br>
+    
+                <button onclick="analise()">Analise de perda</button> <br /> <br />
+            </div>
+
+        </div> 
+
+        <div id="div_result"> </div> <br><br>
     <!-- simulador fim -->
 
     <!--footer inicio-->
@@ -79,3 +75,40 @@
 </body>
 
 </html>
+
+<script>
+function analise() {
+        var nome = input_nome.value;
+        var tipo = input_tipocarne.value;
+        var valor = Number(input_valorcarne.value);
+        var estoque = Number(input_estoque.value);
+        var taxa = Number(0.09);
+        var taxaP = Number(0.90);
+
+        var Valor_Estoque = (valor * estoque);
+        var Perda_Semanal = (Valor_Estoque * taxa);
+        var Perda_Mensal = (Perda_Semanal * 4);
+        var Perda_Anual = (Perda_Mensal * 12);
+
+        var Perda_SemanalP = (Perda_Semanal * taxaP);
+        var Perda_MensalP = (Perda_SemanalP * 4);
+        var Perda_AnualP = (Perda_MensalP * 12);
+
+        div_result.innerHTML = `
+            Levando em consideração o corte "${tipo}", aproximadamente, as perdas da empresa ${nome} são: <br/> <br/>
+            Perda Semanal: R$${Perda_Semanal} reais, (base para cálculo: 9% do valor de R$${Valor_Estoque} reais de seu estoque); <br/>
+            Perda Mensal: R$${Perda_Mensal} reais; <br/>
+            Perda Anual: R$${Perda_Anual} reais; <br/> <br/>
+            
+            Com o nosso serviço, a empresa ${nome} poderá minimizar suas perdas em até 90%, e seriam economizados até: <br/>
+             R$${Perda_SemanalP} reais por semana; <br/>
+             R$${Perda_MensalP} reais por mês; <br/>
+             R$${Perda_AnualP} reais por ano. <br/> <br/> <br/> 
+
+             *Esses valores são calculados levando em consideração que após a compra do nosso produto, 
+             o gestor terá acesso à maiores informações que o ajudarão na tomada de decisão`
+
+    }
+
+
+</script>
