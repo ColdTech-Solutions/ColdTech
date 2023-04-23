@@ -142,6 +142,43 @@
               <h2> <p> </br>Henrique Lipert </p> </h2> 
           </div>
       </div>
+<div class="contato">
+        <h2 style="color: #00BECA;">ENTRE EM CONTATO CONOSCO, DEIXE SUA PERGUNTA!</h2>
+          <div class="contato">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="card card-login">
+                  <img src="img/Get in touch-amico.png" alt="">
+                    <div class="formulario">
+                      <div class="campo">
+                        <span>Nome:</span>
+                        <input id="nome_input" type="text" placeholder="Nome">
+                    </div>
+                        <div class="campo">
+                            <span>E-mail:</span>
+                            <input id="email_input" type="text" placeholder="Login">
+                        </div>
+                        <div class="campo">
+                            <span>Pergunta:</span>
+                            <input id="pergunta_input" type="text" placeholder="Sua Pergunta">
+                            <br>
+                        </div>
+                       
+    
+                    </div>
+                    <div id="div_mensagem">
+                      <button class="botao" onclick="entrar()"><b>Enviar</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
 
     <br>
     <br>
@@ -153,9 +190,23 @@
     <div class="footer">
       <div class="container">
         <h4>Direitos reservados à ColdTech Solutions. 2023 &copy;</h4>
-        <span class="version">v1.0.3</span>
+        <span class="version">v1.0.2</span>
       </div>
     </div>
   </body>
 
 </html>
+
+<script>
+
+  function entrar(){
+
+
+    var nome = nome_input.value
+    var email = email_input.value
+    var pergunta = pergunta_input.value
+
+    div_mensagem.innerHTML = `<b>Mensagem enviada com sucesso!</b>`
+  }
+
+</script>
