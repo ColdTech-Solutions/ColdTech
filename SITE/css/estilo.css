@@ -297,7 +297,7 @@ h1{
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #e6005a 3px solid;
+  border: #B49000 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -394,8 +394,8 @@ justify-content: left;
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 100px;
-  margin-top: 20%;
+  
+  margin-top: 15%;
 }
 .saude{
   justify-content: center;
@@ -403,14 +403,7 @@ justify-content: left;
   align-items: center;
   margin-right: 10px;
 }
-.img_floco{
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  height: 50px;
-  width: 20px;
-}
+
 .margem_escritas{
   margin: 10px;
 }
