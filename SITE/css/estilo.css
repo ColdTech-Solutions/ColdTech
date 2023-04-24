@@ -379,19 +379,24 @@ h1{
   height: var(--tamanho-simulador);
 }
 
-.home_usuario1 {
-  margin: 30px;
-  width: 96%;
-  height: 650px;
-  border-radius: 7%;
-  background-color: #e5e5e5;
+.fundo{
+background-color: #e5e5e5;
+margin: 30px;
+width: 96%;
+height: 650px;
+border-radius: 7%;
+}
 
+.home_usuario1 {
+justify-content: left;
+  
 }
 .home_usuario2{
   justify-content: center;
   display: flex;
   align-items: center;
   margin-bottom: 100px;
+  margin-top: 20%;
 }
 .saude{
   justify-content: center;
@@ -436,4 +441,14 @@ h1{
 
 h2 {
   text-align: center;
+}
+
+.saude_freezers{
+  display: flex;
+  justify-content: center;
+  margin-top: -23%;
+ }
+ 
+.saude_freezers span{
+  font-size: 22px;
 }
