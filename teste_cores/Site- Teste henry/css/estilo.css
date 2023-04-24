@@ -21,20 +21,20 @@ body { /*CSS DA PAGINA INTEIRA*/
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 1px solid #00beca;
-  background-color: #00beca;
+  border-bottom: 1px solid #00FA9A;
+  background-color: #00FA9A;
 }
 
 .header .container {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  background-color: #00beca;
+  background-color: #00FA9A;
 }
 
 .header a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .agora {
@@ -86,7 +86,7 @@ body { /*CSS DA PAGINA INTEIRA*/
 
 .banner .container span {
   font-weight: 800;
-  color: #00beca;
+  color: #00FA9A;
 }
 
 .social {
@@ -156,7 +156,7 @@ body { /*CSS DA PAGINA INTEIRA*/
   width: 300px;
   font-size: 30px;
   text-align: center;
-  color: #00beca;
+  color: #00FA9A;
  }
 
 .container_empresa .box2{
@@ -251,13 +251,13 @@ h1{
   background: white;
   width: 500px;
   height: 600px;
-  color: #00beca;
+  color: #00FA9A;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
   border-radius: 50px;
-  border: #00beca 1.5px solid;
+  border: #00FA9A 1.5px solid;
   box-sizing: border-box;
   margin-top: 100px;
 }
@@ -288,7 +288,7 @@ h1{
 .card h2 {
  
   font-size: 19px;
-  color: #00beca;
+  color: #00FA9A;
 }
 
 .card_erro {
@@ -323,7 +323,7 @@ h1{
 .formulario input {
   padding: 4px 60px;
     text-align: center;
-    border: 1.5px solid #00beca;
+    border: 1.5px solid #00FA9A;
     border-radius: 50px;
 }
 
@@ -336,7 +336,7 @@ h1{
 
 .botao {
     margin-top: 10px;
-    background: #00beca;
+    background: #00FA9A;
     color:black;
     padding: 3px 20px;
     border: none;
@@ -379,24 +379,19 @@ h1{
   height: var(--tamanho-simulador);
 }
 
-.fundo{
-background-color: #e5e5e5;
-margin: 30px;
-width: 96%;
-height: 650px;
-border-radius: 7%;
-}
-
 .home_usuario1 {
-justify-content: left;
-  
+  margin: 30px;
+  width: 96%;
+  height: 650px;
+  border-radius: 7%;
+  background-color: #e5e5e5;
+
 }
 .home_usuario2{
   justify-content: center;
   display: flex;
   align-items: center;
   margin-bottom: 100px;
-  margin-top: 20%;
 }
 .saude{
   justify-content: center;
@@ -441,14 +436,4 @@ justify-content: left;
 
 h2 {
   text-align: center;
-}
-
-.saude_freezers{
-  display: flex;
-  justify-content: center;
-  margin-top: -23%;
- }
- 
-.saude_freezers span{
-  font-size: 22px;
 }
