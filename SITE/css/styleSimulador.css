@@ -1,18 +1,21 @@
 /* alterações universais */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
 }
 
-h2{
-    font-weight: 500;
+h2 {
+    font-weight: 800;
 }
 
 
- /* começo das alterações antes da div de resultados */
+/* começo das alterações antes da div de resultados */
 
 
-/* #logo {
+#logo {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -21,16 +24,21 @@ h2{
     margin-right: 750px;
 }
 
-#header .navBar{
+.header .container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     list-style: none;
     text-decoration: none;
-    color: rgb(15, 158, 158);
+    background-color: #041A37;
 }
 
-#header .navBar a:link{
+.header {
+    background-color: #041A37;
+
+}
+
+/* #header .navBar a:link{
     color:rgb(15, 158, 158);
     text-decoration: none;
 }
@@ -45,9 +53,9 @@ h2{
     height: 25%;
     border-bottom: aqua solid 2.5px;
    
-} */
+}  */
 
-button {
+/* button {
     margin-top: 40px;
     margin-bottom: -27px;
     border-radius: 25px;
@@ -57,41 +65,59 @@ button {
     background-color: rgb(255, 255, 255);
     font-size: 17px;
     margin-left: 25%;
+} */
+
+button {
+    margin-top: 80px;
+    margin-left: 25%;
+    background: #041A37;
+    color: #ffffff;
+    padding: 5px 23px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    width: 184px;
+    align-self: center;
+    cursor: pointer;
 }
 
 #containerSimulador {
-     
-    border-radius: 25px;
+
+    margin-top: 50px;
     display: flex;
     align-self: center;
-    
+
 }
 
 
-.pagina{
-    
+.pagina {
+
     text-align: center;
 }
 
 
-.inputs{
+.inputs {
+    flex-direction: column;
+    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 12px;
-    border: rgb(45, 215, 215) solid 5px;
-    background-color: whitesmoke;
+    border-radius: 50px;
+    border: #041A37 1.5px solid;
+    background-color: white;
     text-decoration: none;
-    padding: 55px;
-    width: 350px;
+    padding: 105px;
+    width: 600px;
+    height: 700px;
 }
 
 
 .inputs input {
 
-    margin-left: 20%;
-    border-radius: 15px;
+    margin-left: 12%;
+    border-radius: 50px;
+    border: #041A37 1.5px solid;
     text-decoration: none;
-    padding: 5px;
+    padding: 4px 60px;
     justify-content: center;
     border-style: double;
 
@@ -107,20 +133,30 @@ button {
     
 } */
 
-
-
-.inputs span{
-    margin-left: 15%;
+input {
     text-align: center;
 }
 
-.pagina{
-    color:rgb(15, 158, 158);
+.inputs span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 36px;
+    margin-left: 25%;
+    text-align: center;
+
 }
-.nomeEmpresa{
+
+.pagina {
+    color: #041A37;
+}
+
+.nomeEmpresa {
     justify-content: center;
     margin-left: 35%;
-} 
+}
+
 /* fim antes do input */
 
 
@@ -134,7 +170,7 @@ button {
     justify-content: center;
     text-align: justify;
     text-justify: auto;
-    border-radius: 15px;
+    border-radius: 35px;
     padding: 10px;
     width: 550px;
     background-color: rgb(251, 246, 216);
