@@ -1,10 +1,10 @@
 <center> 
-  <h1> Seja Bem Vindo(a), Somos a Cold Tech Solutions  <h1/>
+  <h1> Seja Bem Vindo(a), Somos a Cold Tech Solutions </h1>
 
-![Cold Tech Logo Cortado](https://user-images.githubusercontent.com/125835466/229378370-f43af001-7f98-4ade-8337-5ad1edf9bc5d.jpg)
+![Logo cortada](https://user-images.githubusercontent.com/125835466/234414691-96f965ba-6bd7-4008-8025-50a0af75cd39.png)
 
 <h4>:white_small_square: O que fazemos? <br/>
-•Monitoramento de Temperatura nos freezers e câmaras frigoríficas de carne bovina :cow::clock1: <br/><br/>
+•Monitoramento de Temperatura nos freezers e câmaras frias:cow::clock1: <br/><br/>
 
 :white_small_square: Qual nosso Objetivo? <br/>
 • Promover melhorias no transporte e logística de armazenagem de carnes bovinas, por meio da utilização de sensores de temperatura :articulated_lorry: <br/>
