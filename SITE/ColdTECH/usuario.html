@@ -11,7 +11,6 @@
     <link rel="icon" href="img/logo_caminhao_branco.png">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
 </head>
 
 <body>
@@ -40,11 +39,11 @@
 
     <!-- Header -->
     <div class="fundo">
-               <h1 style="color: #B49000;">Bem vindo a ColdTech Solutions!</h1>
+        <h1 style="color: #B49000;">Bem vindo a ColdTech Solutions!</h1>
         <div class="content-usuario">
 
             <div class="home_usuario1">
- 
+
                 <div class="margem_escritas">
                     <img style="width: 200px; height: 200px;" src="img/icone_usuario-removebg-preview.png">
                     <h3 style="color: #041A37;">Nome da Empresa</h3>
@@ -60,15 +59,27 @@
                 <div class="card">Câmaras frias em funcionamento: 10/11</div>
                 <div class="card">Saúde dos Freezers: </br> 66% - Regular </div>
                 <div class="card">Saúde das Câmaras: </br> 90% - Ótima </div>
-                <div class="card">Saúde Geral da Empresa: </br> 78% - Boa  </div>
-                
+            </div>
+
+        </div>
+        <div class="fundo2">
+            <div class="canvas">
+                <section style="width: 50%;">
+                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart2"></canvas>
+                </section>
             </div>
         </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <div class="home_usuario2">
             <h3 class="saude" style="color: #041A37;">Saúde da empresa: </h3>
-            <h2 style="color:  #B49000">99%</h2>
+            <h2 style="color:  #B49000">78%</h2>
         </div>
     </div>
+
 
 
 
@@ -79,5 +90,65 @@
         </div>
     </div>
 </body>
+
+
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Temperatura Freezers',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+
+            }]
+
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            layout: {
+                //  padding: 200
+
+            }
+        }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Temperatura Câmaras',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+
+            }]
+
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            layout: {
+                //   padding: 200
+
+            }
+        }
+    });
+</script>
 
 </html>
