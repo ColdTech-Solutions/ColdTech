@@ -11,12 +11,13 @@ INSERT INTO empresa VALUES
 (NULL, 'Swift', '11.779.652/0001-00');
 
 CREATE TABLE usuario(
-idUsuario INT PRIMARY KEY auto_increment,
+idUsuario INT auto_increment,
 nome VARCHAR(45),
 email VARCHAR(45),
 senha CHAR(8),
 fkEmpresa INT,
-CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
+CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
+CONSTRAINT pkComposta PRIMARY KEY (idUsuario, fkEmpresa)
 );
 
 INSERT INTO usuario VALUES
