@@ -50,7 +50,7 @@
                     <h4 style="color: #B49000">Swift - Assaí Av. Paulista</h4>
                     <h3 style="color: #041A37;">ID: 0000001</h3>
                     <h3 style="color: #041A37;">Nome Funcionário</h3>
-                    <h4 style="color: #B49000">Márcio Betorrera</h4>
+                    <h4 style="color: #B49000">Fernado Brandão</h4>
                 </div>
             </div>
 
@@ -64,33 +64,34 @@
         </div>
         <div class="fundo2">
             <div class="canvas">
-                <section style="width: 50%;">
                     <canvas id="myChart"></canvas>
-                    <canvas id="myChart2"></canvas>
-                </section>
             </div>
+            <div class="canvas2">
+                <canvas id="myChart2"></canvas>
+            
+            </div>
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         </div>
-
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <div class="home_usuario2">
-            <h3 class="saude" style="color: #041A37;">Saúde da empresa: </h3>
+            <h2 class="saude" style="color: #041A37;">Saúde da empresa:</h2>
             <h2 style="color:  #B49000">78%</h2>
         </div>
-    </div>
+        
 
 
-
-
-    <div class="footer">
-        <div class="container">
-            <h4>Direitos reservados à ColdTech Solutions. 2023 &copy;</h4>
-            <span class="version">v1.0.5</span>
+        <div class="footer_usuario">
+        <div class="footer">
+            <div class="container">
+                <h4>Direitos reservados à ColdTech Solutions. 2023 &copy;</h4>
+                <span class="version">v1.0.5</span>
+            </div>
         </div>
     </div>
-</body>
-
+    </body>
 
 
 <script>
@@ -99,10 +100,12 @@
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['06h', '07h', '08h', '09h', '10h', '11h'],
             datasets: [{
                 label: 'Temperatura Freezers',
-                data: [12, 19, 3, 5, 2, 3],
+                bordercolor: ['#B49000'],
+                backgroundColor: ['#B49000', '#B49000'],
+                data: [-13, -9, -13, -6, -12, -5],
                 borderWidth: 1
 
             }]
@@ -126,12 +129,16 @@
 
     new Chart(ctx2, {
         type: 'line',
+        color: ['#041A37'],
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['13h', '14h', '15h', '16h', '17h', '18h'],
             datasets: [{
                 label: 'Temperatura Câmaras',
-                data: [12, 19, 3, 5, 2, 3],
+                bordercolor: ['#041A37'],
+                backgroundColor: ['#041A37', '#041A37'],
+                data: [-5, -10, -13, -15, -12, -3],
                 borderWidth: 1
+
 
             }]
 
