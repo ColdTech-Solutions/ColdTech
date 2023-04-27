@@ -65,3 +65,15 @@ SELECT * FROM sensor;
 SELECT * FROM localSensor;
 
 SELECT * FROM medicao;
+
+-- EXIBIR O USUÁRIO E SUA EMPRESA
+SELECT * FROM usuario JOIN empresa ON idEmpresa = fkEmpresa;
+
+-- EXIBIR O SENSOR E O SEU LOCAL
+SELECT * FROM sensor JOIN localSensor ON idLocal = fkLocalSensor;
+
+-- EXIBIR O SENSOR E SUA LEITURA
+SELECT * FROM sensor JOIN medicao ON idSensor = fkSensor;
+
+-- EXIBIR O LOCAL ONDE ESTÁ O SENSOR NA EMPRESA
+SELECT * FROM localSensor JOIN empresa ON idEmpresa = fkEmpresa;
