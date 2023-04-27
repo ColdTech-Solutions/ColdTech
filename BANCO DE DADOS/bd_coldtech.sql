@@ -21,7 +21,7 @@ CONSTRAINT pkComposta PRIMARY KEY (idUsuario, fkEmpresa)
 );
 
 INSERT INTO usuario VALUES
-(NULL, 'Márcio Betorrera', 'marcio.swift@swift.com', '#ST45698', 1);
+(NULL, 'Fernando Brandão', 'Fernando.Brandão@swift.com', '#ST45698', 1);
 
 CREATE TABLE localSensor(
 idLocal INT PRIMARY KEY auto_increment,
