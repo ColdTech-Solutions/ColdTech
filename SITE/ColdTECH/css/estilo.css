@@ -495,3 +495,11 @@ h2 {
   justify-content: center;
   text-align: center;
 }
+
+.titulo_grafico h1{
+display: flex;
+font-size: medium;
+align-items: center;
+justify-content: center;
+}
+

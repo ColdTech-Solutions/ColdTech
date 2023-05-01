@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="css/styleSimulador.css">
-   
+
 </head>
 
 <body>
@@ -40,26 +40,26 @@
 
     <!-- simulador inicio -->
 
-   
-        <div id="containerSimulador">
-            <div class="inputs">
-                <h2 class="pagina">Simulador Financeiro</h2>
-                <span>Insira o Nome da Empresa:</span> <br> <input type="text" id="input_nome"
-                    placeholder="Nome da Empresa"> <br><br>
-                <span>Insira o corte/tipo de carne:</span> <br> <input type="text" id="input_tipocarne"
-                    placeholder="Corte da Carne"><br><br>
-                <span>Insira o custo do kg da carne:</span> <br><input type="number" id="input_valorcarne"
-                    placeholder="Preço do Kg">
-                <br><br>
-                <span>Quantidade de carne em estoque:</span> <br> <input type="number" id="input_estoque"
-                    placeholder="Quantidade em estoque"> <br>
-    
-                <button onclick="analise()">Analise de perda</button> <br /> <br />
-            </div>
 
-        </div> 
+    <div id="containerSimulador">
+        <div class="inputs">
+            <h2 class="pagina">Simulador Financeiro</h2>
+            <span>Insira o Nome da Empresa:</span> <br> <input type="text" id="input_nome"
+                placeholder="Nome da Empresa"> <br><br>
+            <span>Insira o corte/tipo de carne:</span> <br> <input type="text" id="input_tipocarne"
+                placeholder="Corte da Carne"><br><br>
+            <span>Insira o custo do kg da carne:</span> <br><input type="number" id="input_valorcarne"
+                placeholder="Preço do Kg">
+            <br><br>
+            <span>Quantidade de carne em estoque:</span> <br> <input type="number" id="input_estoque"
+                placeholder="Quantidade em estoque"> <br>
 
-        <div id="div_result"> </div> <br><br>
+            <button onclick="analise()">Analise de perda</button> <br /> <br />
+        </div>
+
+    </div>
+
+    <div id="div_result"> </div> <br><br>
     <!-- simulador fim -->
 
     <!--footer inicio-->
@@ -70,14 +70,14 @@
         </div>
     </div>
     <!--footer fim-->
-    
+
 
 </body>
 
 </html>
 
 <script>
-function analise() {
+    function analise() {
         var nome = input_nome.value;
         var tipo = input_tipocarne.value;
         var valor = Number(input_valorcarne.value);

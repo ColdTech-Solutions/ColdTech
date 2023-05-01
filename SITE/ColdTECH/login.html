@@ -11,7 +11,7 @@
     <link rel="icon" href="img/logo_caminhao_branco.png">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
- 
+
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <div class="header">
         <div class="container">
             <h1 class="titulo_img"><img src="img/logo_caminhao_branco.png" alt=""></h1>
-           
+
             <ul class="navbar">
                 <li>
                     <a href="index.html">Home</a>
@@ -47,7 +47,7 @@
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-        
+
         <div class="container">
             <div class="card card-login">
                 <h2>Olá de volta!</h2>
@@ -101,12 +101,12 @@
             cardErro.style.display = `block`
             mensagem_erro.innerHTML = `Por favor preencha todos os campos!`
 
-            
-            
+
+
         } else if (email.indexOf('@') == -1 || email.indexOf('.com') == -1) {
             cardErro.style.display = 'block'
             mensagem_erro.innerHTML = `email inválido!`
-            
+
         } else if (senha.lenght < 8) {
             cardErro.style.display = 'block'
             mensagem_erro.innerHTML = `Senha inválida`
@@ -121,12 +121,11 @@
                 window.location = `usuario.html`;
             }, "2000")
 
-        } 
-        
+        }
+
 
     }
 
-    
+
 
 </script>
-
