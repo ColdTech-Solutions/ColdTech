@@ -184,13 +184,14 @@
 
           </div>
           <div id="div_mensagem">
-            <button class="botao" onclick="entrar()"><b>Enviar</b></button>
+            <button class="botao" onclick="enviar()"><b>Enviar</b></button>
           </div>
         </div>
       </div>
     </div>
 
   </div>
+  
 
   <br>
   <br>
@@ -211,14 +212,16 @@
 
 <script>
 
-  function entrar() {
+  function enviar() {
 
 
     var nome = nome_input.value
     var email = email_input.value
     var pergunta = pergunta_input.value
+    
 
     div_mensagem.innerHTML = `<b>Mensagem enviada com sucesso!</b>`
+
   }
 
 </script>
