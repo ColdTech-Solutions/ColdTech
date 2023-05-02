@@ -503,10 +503,11 @@ align-items: center;
 justify-content: center;
 }
 
-h4{
+.contato_telefone{
   text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+ 
 }
 
-h5{
-  text-align: center;
-}
