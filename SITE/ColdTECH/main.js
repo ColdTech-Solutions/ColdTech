@@ -11,6 +11,7 @@ const serial = async (
     valoresDht11Temperatura,
     valoresLuminosidade,
     valoresLm35Temperatura,
+   
     valoresChave
 ) => {
     const poolBancoDados = mysql.createPool(
@@ -43,12 +44,14 @@ const serial = async (
         const dht11Temperatura = parseFloat(valores[1]);
         const luminosidade = parseFloat(valores[2]);
         const lm35Temperatura = parseFloat(valores[3]);
+        const lm35Temperatura2 = parseFloat(valores[3]);
         const chave = parseInt(valores[4]);
 
         valoresDht11Umidade.push(dht11Umidade);
         valoresDht11Temperatura.push(dht11Temperatura);
         valoresLuminosidade.push(luminosidade);
         valoresLm35Temperatura.push(lm35Temperatura);
+        valoresLm35Temperatura2.push(lm35Temperatura2);
         valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
@@ -69,6 +72,7 @@ const servidor = (
     valoresDht11Temperatura,
     valoresLuminosidade,
     valoresLm35Temperatura,
+   
     valoresChave
 ) => {
     const app = express();
@@ -108,6 +112,7 @@ const servidor = (
         valoresDht11Temperatura,
         valoresLuminosidade,
         valoresLm35Temperatura,
+        
         valoresChave
     );
     servidor(
