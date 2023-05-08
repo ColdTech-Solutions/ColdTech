@@ -1,14 +1,17 @@
+
 CREATE DATABASE coldtech;
 USE coldtech;
 
 CREATE TABLE empresa(
 idEmpresa INT PRIMARY KEY auto_increment,
 nome VARCHAR(45),
-cnpj VARCHAR(18)
+cnpj VARCHAR(18),
+senha VARCHAR(8),
+email VARCHAR(45)
 );
 
 INSERT INTO empresa VALUES
-(NULL, 'Swift', '11.779.652/0001-00');
+(NULL, 'Swift', '11.779.652/0001-00', 12345678, 'fernando@gmail.com');
 
 CREATE TABLE usuario(
 idUsuario INT auto_increment,
