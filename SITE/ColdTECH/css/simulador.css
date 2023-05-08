@@ -12,18 +12,6 @@ h2 {
 }
 
 
-/* começo das alterações antes da div de resultados */
-
-
-/* #logo {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 105px;
-    height: 105px;
-    margin-right: 750px;
-} */
-
 .header .container {
     display: flex;
     align-items: center;
@@ -37,35 +25,6 @@ h2 {
     background-color: #041A37;
 
 }
-
-/* #header .navBar a:link{
-    color:rgb(15, 158, 158);
-    text-decoration: none;
-}
-
-#header .navBar a:visited{
-    color:rgb(15, 158, 158);
-    text-decoration: none;
-}
-
-#header{
-    
-    height: 25%;
-    border-bottom: aqua solid 2.5px;
-   
-}  */
-
-/* button {
-    margin-top: 40px;
-    margin-bottom: -27px;
-    border-radius: 25px;
-    padding: 8px;
-    color: rgb(3, 160, 172);
-    border-color: rgb(0,190,202);
-    background-color: rgb(255, 255, 255);
-    font-size: 17px;
-    margin-left: 25%;
-} */
 
 button {
     margin-top: 80px;
@@ -82,16 +41,13 @@ button {
 }
 
 #containerSimulador {
-
     margin-top: 50px;
     display: flex;
     align-self: center;
-
 }
 
 
 .pagina {
-
     text-align: center;
 }
 
@@ -122,16 +78,6 @@ button {
     border-style: double;
 
 }
-
-
-
-/* #header .navBar {
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-} */
 
 input {
     text-align: center;
@@ -172,7 +118,7 @@ input {
     text-align: justify;
     text-justify: auto;
     border-radius: 35px;
-    padding: 10px;
+    padding: 29px;
     width: 550px;
-    background-color: rgb(251, 246, 216);
+    background-color: #e5e5e5;
 }
