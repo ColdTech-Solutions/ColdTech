@@ -48,18 +48,15 @@ INSERT INTO sensor VALUES
 (NULL, 'LM35', 'temperatura', 1);
 
 CREATE TABLE medicao(
-idMedicao INT, 
+idMedicao int auto_increment primary key, 
 temperatura FLOAT, 
-fkSensor INT, 
-CONSTRAINT fkSensor FOREIGN KEY (fkSensor) REFERENCES sensor (idSensor),
-dataHora DATETIME default current_timestamp,
-CONSTRAINT pkComposta PRIMARY KEY (idMedicao, fkSensor)
+dataHora DATETIME default current_timestamp
 );
 
 INSERT INTO medicao VALUES
-(1, '-12.00', 1, default);
+(null, '-12.00', default);
 
-SELECT * FROM usuario;
+SELECT * FROM usuario; 
 
 SELECT * FROM empresa;
 
