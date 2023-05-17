@@ -60,27 +60,28 @@ function entrar(req, res) {
 
 }
 
-function cadastrar_empresa(req, res) {
+function empresacadastrar(req, res) {
     
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
+    var email = req.body.emailServer;
     var cnpj = req.body.cnpjServer;
     var senha = req.body.senhaServer;
-    var email = req.body.emailServer;
+
 
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
-    } else if (cnpj == undefined) {
-        res.status(400).send("Seu Cnpj está undefined!");
     }else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
+    }else if (cnpj == undefined) {
+        res.status(400).send("Seu CNPJ está undefined!");
     }else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     }else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar_empresa(nome, cnpj, senha, email)
+        usuarioModel.empresacadastrar(nome, email, cnpj, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -98,11 +99,12 @@ function cadastrar_empresa(req, res) {
     }
 }
 
-function cadastrar_usuario(req, res) {
+function funcionariocadastrar(req, res) {
     
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
-    var cnpj = req.body.cnpjServer;
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -111,12 +113,10 @@ function cadastrar_usuario(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else if (cnpj == undefined) {
-        res.status(400).send("Sua Cnpj está undefined!");
-    }else {
+    } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar_usuario(nome, email, senha, cnpj)
+        usuarioModel.funcionariocadastrar(nome, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -125,7 +125,7 @@ function cadastrar_usuario(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao realizar o cadastro do funcionário! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
@@ -136,8 +136,8 @@ function cadastrar_usuario(req, res) {
 
 module.exports = {
     entrar,
-    cadastrar_empresa,
-    cadastrar_usuario,
+    empresacadastrar,
+    funcionariocadastrar,
     listar,
     testar
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/funcoes.js"></script>
 
     <title>ColdTech Solutions | Login</title>
 
@@ -26,6 +27,7 @@
                 <li>
                     <a href="index.html">Home</a>
                 </li>
+                <li>|</li>
                 <li>
                     <a href="simulador.html">Simulador</a>
                 </li>
@@ -33,8 +35,13 @@
                 <li class="agora">
                     <a href="#">Login</a>
                 </li>
+                <li>|</li>
                 <li>
-                    <a href="cadastro.html">Cadastro</a>
+                    <a href="empresacadastrar.html">Cadastro Empresa</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="funcionariocadastrar.html">Cadastro Funcionário</a>
                 </li>
             </ul>
         </div>
@@ -94,8 +101,8 @@
 <script>
 
 
-    function entrar() {
-       
+function entrar() {
+        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -137,7 +144,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./usuario.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

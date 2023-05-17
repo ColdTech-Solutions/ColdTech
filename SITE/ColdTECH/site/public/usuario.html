@@ -8,12 +8,13 @@
 
     <title>ColdTech | Usuário</title>
 
+    <script src="../js/funcoes.js"></script>
     <link rel="icon" href="assets/img/logo_caminhao_branco.png">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
-<body>
+<body onload="validarSessao(), atualizacaoPeriodica()">
     <!-- Header -->
     <div class="header">
         <div class="container">
@@ -46,11 +47,9 @@
 
                 <div class="margem_escritas">
                     <img style="width: 200px; height: 200px;" src="assets/img/icone_usuario-removebg-preview.png">
-                    <h3 style="color: #041A37;">Nome da Empresa</h3>
-                    <h4 style="color: #B49000">Swift - Assaí Av. Paulista</h4>
                     <h3 style="color: #041A37;">ID: 0000001</h3>
                     <h3 style="color: #041A37;">Nome Funcionário</h3>
-                    <h4 style="color: #B49000">Fernando Brandão</h4>
+                    <h4 style="color: #B49000" id="b_usuario">usuário</h4>
                 </div>
             </div>
 
