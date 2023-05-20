@@ -471,15 +471,17 @@ h2 {
 }
 
 .canvas  {
-  width: 100%;
+  width: 500px;
   height: 100%;
-  margin-left: 120px;
+  margin-top: 10%;
+  margin-left: 100px;
 }
 
 .canvas2 {
-  width: 100%;
+  width: 500px;
   height: 100%;
-  margin-left: 120px;
+  margin-top: 10%;
+  margin-left: 100px;
 }
 
 .fundo h1{

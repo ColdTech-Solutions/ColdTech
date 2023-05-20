@@ -5,13 +5,20 @@ USE coldtech;
 CREATE TABLE empresa(
 idEmpresa INT PRIMARY KEY auto_increment,
 nome VARCHAR(45),
+email VARCHAR(45),
 cnpj VARCHAR(18),
-senha VARCHAR(8),
-email VARCHAR(45)
+senha VARCHAR(8)
+);
+
+CREATE TABLE funcionario(
+idEmpresa INT PRIMARY KEY auto_increment,
+nome VARCHAR(45),
+email VARCHAR(45),
+senha VARCHAR(8)
 );
 
 INSERT INTO empresa VALUES
-(NULL, 'Swift', '11.779.652/0001-00', 12345678, 'fernando@gmail.com');
+(NULL, 'Swift', 'fernando@gmail.com' , '11.779.652/0001-00', 12345678);
 
 CREATE TABLE usuario(
 idUsuario INT auto_increment,
@@ -56,7 +63,7 @@ dataHora DATETIME default current_timestamp
 INSERT INTO medicao VALUES
 (null, '-12.00', default);
 
-SELECT * FROM usuario; 
+SELECT * FROM funcionario; 
 
 SELECT * FROM empresa;
 
@@ -77,3 +84,5 @@ SELECT * FROM sensor JOIN medicao ON idSensor = fkSensor;
 
 -- EXIBIR O LOCAL ONDE ESTÁ O SENSOR NA EMPRESA
 SELECT * FROM localSensor JOIN empresa ON idEmpresa = fkEmpresa;
+
+DROP DATABASE coldtech;

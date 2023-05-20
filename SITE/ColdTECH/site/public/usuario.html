@@ -47,9 +47,10 @@
 
                 <div class="margem_escritas">
                     <img style="width: 200px; height: 200px;" src="assets/img/icone_usuario-removebg-preview.png">
-                    <h3 style="color: #041A37;">ID: 0000001</h3>
-                    <h3 style="color: #041A37;">Nome Funcionário</h3>
-                    <h4 style="color: #B49000" id="b_usuario">usuário</h4>
+                    <h3 style="color: #041A37;">Nome Empresa</h3>
+                    <h3 style="color: #B49000" id="b_usuario">usuário</h3>
+                    <h3 style="color: #041A37;">Email Funcionário</h3>
+                    <h3 style="color: #B49000" id="b_email">email</h3>
                 </div>
             </div>
 
@@ -94,6 +95,11 @@
 
 
 <script>
+
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+
+
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
@@ -118,7 +124,7 @@
                 }
             },
             layout: {
-                //  padding: 200
+                 padding: 0
 
             }
         }
@@ -150,7 +156,7 @@
                 }
             },
             layout: {
-                //   padding: 200
+                  padding: 0
 
             }
         }
