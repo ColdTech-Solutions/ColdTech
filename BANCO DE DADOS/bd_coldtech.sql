@@ -1,4 +1,3 @@
-
 CREATE DATABASE coldtech;
 USE coldtech;
 
@@ -10,27 +9,22 @@ cnpj VARCHAR(18),
 senha VARCHAR(8)
 );
 
-CREATE TABLE funcionario(
-idEmpresa INT PRIMARY KEY auto_increment,
-nome VARCHAR(45),
-email VARCHAR(45),
-senha VARCHAR(8)
-);
-
 INSERT INTO empresa VALUES
 (NULL, 'Swift', 'fernando@gmail.com' , '11.779.652/0001-00', 12345678);
 
-CREATE TABLE usuario(
+CREATE TABLE usuarios(
 idUsuario INT auto_increment,
 nome VARCHAR(45),
 email VARCHAR(45),
 senha CHAR(8),
+tipoFuncionario VARCHAR(20),
+CONSTRAINT chkTipoFuncionario CHECK (tipoFuncionario in ('admin', 'comum')),
 fkEmpresa INT,
 CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
 CONSTRAINT pkComposta PRIMARY KEY (idUsuario, fkEmpresa)
 );
 
-INSERT INTO usuario VALUES
+INSERT INTO usuarios VALUES
 (NULL, 'Fernando Brandão', 'Fernando.Brandão@swift.com', '#ST45698', 1);
 
 CREATE TABLE localSensor(
@@ -62,8 +56,6 @@ dataHora DATETIME default current_timestamp
 
 INSERT INTO medicao VALUES
 (null, '-12.00', default);
-
-SELECT * FROM funcionario; 
 
 SELECT * FROM empresa;
 
