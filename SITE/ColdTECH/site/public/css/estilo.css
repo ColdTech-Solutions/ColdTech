@@ -390,8 +390,9 @@ input {
   margin: 15px;
   width: 96%;
   height: auto;
-  border-radius: 7%;
+  border-radius: 2%;
   padding: 15px;
+  
 }
 
 .content-usuario {
@@ -402,7 +403,7 @@ input {
 
 .home_usuario1 {
   justify-content: left;
-  width: 25%;
+  width: 20%;
   border-right: 1px solid rgb(107, 107, 107);
 }
 
@@ -450,6 +451,7 @@ h2 {
   width: 100%;
   display: flex;
 }
+
 
 .card {
   width: 30%;
