@@ -25,7 +25,7 @@ CONSTRAINT pkComposta PRIMARY KEY (idUsuario, fkEmpresa)
 );
 
 INSERT INTO usuarios VALUES
-(NULL, 'Fernando Brandão', 'Fernando.Brandão@swift.com', '#ST45698', 1);
+(NULL, 'Fernando Brandão', 'Fernando.Brandão@swift.com', '#ST45698', 'admin', 1);
 
 CREATE TABLE localSensor(
 idLocal INT PRIMARY KEY auto_increment,
@@ -65,16 +65,16 @@ SELECT * FROM localSensor;
 
 SELECT * FROM medicao;
 
+SELECT * FROM usuarios;
+
 -- EXIBIR O USUÁRIO E SUA EMPRESA
-SELECT * FROM usuario JOIN empresa ON idEmpresa = fkEmpresa;
+SELECT * FROM usuarios JOIN empresa ON idEmpresa = fkEmpresa;
 
 -- EXIBIR O SENSOR E O SEU LOCAL
 SELECT * FROM sensor JOIN localSensor ON idLocal = fkLocalSensor;
 
 -- EXIBIR O SENSOR E SUA LEITURA
-SELECT * FROM sensor JOIN medicao ON idSensor = fkSensor;
+SELECT * FROM sensor JOIN medicao ON idSensor = fkLocalSensor;
 
 -- EXIBIR O LOCAL ONDE ESTÁ O SENSOR NA EMPRESA
 SELECT * FROM localSensor JOIN empresa ON idEmpresa = fkEmpresa;
-
-DROP DATABASE coldtech;
