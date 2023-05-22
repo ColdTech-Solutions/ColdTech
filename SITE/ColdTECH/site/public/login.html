@@ -132,11 +132,11 @@ function entrar() {
                     console.log(JSON.stringify(json));
 
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.SENHA_USUARIO = json.senha;
+                    sessionStorage.NOME_USUARIO = json.nome;
 
                     setTimeout(function () {
-                        window.location = "./usuario.html";
-                    }, 1000); // apenas para exibir o loading
+                        window.location = "usuario.html";
+                    },1000); // apenas para exibir o loading
 
                 });
 

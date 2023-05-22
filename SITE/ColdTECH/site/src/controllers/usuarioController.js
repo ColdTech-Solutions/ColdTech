@@ -105,6 +105,7 @@ function funcionariocadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var tipoFuncionario = req.body.tipoFuncionario;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -113,10 +114,12 @@ function funcionariocadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
+    } else if (tipoFuncionario == undefined) {
+        res.status(400).send("Sua tipo de Funcionário está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.funcionariocadastrar(nome, email, senha)
+        usuarioModel.funcionariocadastrar(nome, email, senha, tipoFuncionario)
             .then(
                 function (resultado) {
                     res.json(resultado);
