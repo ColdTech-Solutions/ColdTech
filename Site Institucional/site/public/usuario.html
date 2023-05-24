@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ColdTech | Usuário</title>
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="icon" href="assets/img/logo_caminhao_branco.png">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo_img"><img src="assets/img/logo_caminhao_branco.png" alt=""></h1>
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="usuario.html">Usuário</a>
+                </li>
+                <li>
+                    <a href="dashboard/dashboard.html">DashBoards</a>
+                </li>
+                <li>
+                    <a href="dashboard/ajuda.html">Ajuda</a>
+                </li>
+                <li>
+                    <a href="funcionariocadastrar.html" id="cadastrarF">Cadastrar Funcionário</a>
+                </li>
+                <li>
+                    <a href="index.html">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <div class="fundo">
+        <h1 style="color: #B49000;">Bem vindo a ColdTech Solutions!</h1>
+        <div class="content-usuario">
+
+            <div class="home_usuario1">
+
+                <div class="margem_escritas">
+                    <img style="width: 200px; height: 200px;" src="assets/img/icone_usuario-removebg-preview.png">
+                    <h3 style="color: #041A37;">Nome Empresa</h3>
+                    <h3 style="color: #B49000" id="b_usuario">usuário</h3>
+                    <h3 style="color: #041A37;">Email Funcionário</h3>
+                    <h3 style="color: #B49000" id="b_email">email</h3>
+                    <h3 style="color: #041A37;">Seu tipo de acesso é</h3>
+                    <h3 style="color: #B49000" id="b_tipo">tipo</h3>
+    
+                </div>
+            </div>
+            <div class="fundocards">
+                <div class="saude_freezers">
+                    <div class="card"><b>Freezers em funcionamento: 100/150</b></div>
+                    <div class="card"><b>Câmaras frias em funcionamento: 10/11</b></div>
+                    <div class="card"><b>Saúde dos Freezers: </br> 66% - Regular </b></div>
+                    <div class="card"><b>Saúde das Câmaras: </br> 90% - Ótima </b></div>
+                </div>
+                <div class="saude_freezers">
+                    <div class="card"><b>Freezers em funcionamento: 100/150</b></div>
+                    <div class="card"><b>Câmaras frias em funcionamento: 10/11</b></div>
+                    <div class="card"><b>Saúde dos Freezers: </br> 66% - Regular </b></div>
+                    <div class="card"><b>Saúde das Câmaras: </br> 90% - Ótima </b></div>
+                </div>
+            </div>
+        </div>
+        <div class="fundo2">
+            <div class="canvas">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="canvas2">
+                <canvas id="myChart2"></canvas>
+
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        </div>
+        <div class="home_usuario2">
+            <h2 class="saude" style="color: #041A37;">Saúde da empresa:</h2>
+            <h2 style="color:  #B49000">78%</h2>
+        </div>
+
+
+
+        <div class="footer_usuario">
+            <div class="footer">
+                <div class="container">
+                    <h4>Direitos reservados à ColdTech Solutions. 2023 &copy;</h4>
+                    <span class="version">v1.0.5</span>
+                </div>
+            </div>
+        </div>
+</body>
+
+
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+    b_tipo.innerHTML = sessionStorage.TIPO_USUARIO;
+
+
+
+
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['06h', '07h', '08h', '09h', '10h', '11h'],
+            datasets: [{
+                label: 'Temperatura Freezers',
+                bordercolor: ['#B49000'],
+                backgroundColor: ['#B49000', '#B49000'],
+                data: [-13, -9, -13, -6, -12, -5],
+                borderWidth: 1
+
+            }]
+
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            layout: {
+                padding: 0
+
+            }
+        }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'line',
+        color: ['#041A37'],
+        data: {
+            labels: ['13h', '14h', '15h', '16h', '17h', '18h'],
+            datasets: [{
+                label: 'Temperatura Câmaras',
+                bordercolor: ['#041A37'],
+                backgroundColor: ['#041A37', '#041A37'],
+                data: [-5, -10, -13, -15, -12, -3],
+                borderWidth: 1
+
+
+            }]
+
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            layout: {
+                padding: 0
+
+            }
+        }
+    });
+</script>
+
+</html>

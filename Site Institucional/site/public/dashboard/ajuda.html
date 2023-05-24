@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajuda | ColdTech</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo_img"><img src="../assets/img/logo_caminhao_branco.png" alt=""></h1>
+      <ul class="navbar">
+        <li>
+          <a href="../usuario.html">Usuário</a>
+        </li>
+        <li>
+          <a href="dashboard.html">DashBoards</a>
+        </li>
+        <li class="agora">
+          <a href="ajuda.html">Ajuda</a>
+        </li>
+        <li>
+          <a href="../funcionariocadastrar.html">Cadastrar Funcionário</a>
+        </li>
+        <li>
+          <a href="../index.html">Sair</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="container_ajuda">
+    <div class="card card-login">
+      <img src="../assets/img/Contact us-amico.png" alt="">
+      <div class="formulario">
+        <div class="campo">
+          <span>Nome:</span>
+          <input id="nome_input" type="text" placeholder="Nome">
+        </div>
+        <div class="campo">
+          <span>Telefone:</span>
+          <input id="telefone_input" type="number" placeholder="Telefone">
+        </div>
+        <div class="campo">
+          <span>Pergunta:</span>
+          <input id="pergunta_input" type="text" placeholder="Sua Pergunta">
+          <br>
+        </div>
+
+
+      </div>
+      <div id="div_mensagem">
+        <button class="botao" onclick="entrar()"><b>Enviar</b></button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="footer">
+    <div class="container">
+      <h4>Direitos reservados à ColdTech Solutions. 2023 &copy;</h4>
+      <span class="version">v1.0.5</span>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  function entrar() {
+
+
+    var nome = nome_input.value
+    var telefone = telefone_input.value
+    var pergunta = pergunta_input.value
+
+    div_mensagem.innerHTML = `<b>Mensagem enviada com sucesso!</b>`
+  }
+</script>
+</body>
+
+</html>
