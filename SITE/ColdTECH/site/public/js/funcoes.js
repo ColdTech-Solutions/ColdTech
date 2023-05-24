@@ -5,10 +5,11 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var senha = sessionStorage.SENHA_USUARIO;
+    var tipo = sessionStorage.TIPO_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
 
-    if (email != null && nome != null && senha != null) {
+    if (email != null && nome != null && senha != null&& tipo != null) {
          window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
 

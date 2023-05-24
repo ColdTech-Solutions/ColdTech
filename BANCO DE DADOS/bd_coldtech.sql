@@ -10,7 +10,7 @@ senha VARCHAR(8)
 );
 
 INSERT INTO empresa VALUES
-(NULL, 'Swift', 'fernando@gmail.com' , '11.779.652/0001-00', 12345678);
+(NULL, 'Swift', 'Fernando.Brandão@swift.com' , '11.779.652/0001-00', 12345678);
 
 CREATE TABLE usuarios(
 idUsuario INT auto_increment,
@@ -25,7 +25,7 @@ CONSTRAINT pkComposta PRIMARY KEY (idUsuario, fkEmpresa)
 );
 
 INSERT INTO usuarios VALUES
-(NULL, 'Fernando Brandão', 'Fernando.Brandão@swift.com', '#ST45698', 'admin', 1);
+(NULL, 'Fernando Brandão', 'Fernando.Brandão@swift.com', '12345678', 'admin', 1);
 
 CREATE TABLE localSensor(
 idLocal INT PRIMARY KEY auto_increment,
@@ -67,6 +67,8 @@ SELECT * FROM medicao;
 
 SELECT * FROM usuarios;
 
+DELETE FROM usuarios where idUsuario = 2;
+
 -- EXIBIR O USUÁRIO E SUA EMPRESA
 SELECT * FROM usuarios JOIN empresa ON idEmpresa = fkEmpresa;
 
@@ -78,3 +80,5 @@ SELECT * FROM sensor JOIN medicao ON idSensor = fkLocalSensor;
 
 -- EXIBIR O LOCAL ONDE ESTÁ O SENSOR NA EMPRESA
 SELECT * FROM localSensor JOIN empresa ON idEmpresa = fkEmpresa;
+
+DROP DATABASE coldtech;

@@ -99,10 +99,8 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var cnpjVar = cnpj_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || cnpjVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha os campos em branco";
 
@@ -125,7 +123,7 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 cnpjServer: cnpjVar,
-                senhaServer: senhaVar
+                
             })
         }).then(function (resposta) {
 

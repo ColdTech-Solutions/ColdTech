@@ -30,7 +30,7 @@
                     <a href="dashboard/ajuda.html">Ajuda</a>
                 </li>
                 <li>
-                    <a href="funcionariocadastrar.html">Cadastrar Funcionário</a>
+                    <a href="funcionariocadastrar.html" id="cadastrarF">Cadastrar Funcionário</a>
                 </li>
                 <li>
                     <a href="index.html">Sair</a>
@@ -53,6 +53,9 @@
                     <h3 style="color: #B49000" id="b_usuario">usuário</h3>
                     <h3 style="color: #041A37;">Email Funcionário</h3>
                     <h3 style="color: #B49000" id="b_email">email</h3>
+                    <h3 style="color: #041A37;">Seu tipo de acesso é</h3>
+                    <h3 style="color: #B49000" id="b_tipo">tipo</h3>
+    
                 </div>
             </div>
             <div class="fundocards">
@@ -104,6 +107,10 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+    b_tipo.innerHTML = sessionStorage.TIPO_USUARIO;
+
+
+
 
 
     const ctx = document.getElementById('myChart');
