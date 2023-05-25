@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const SERIAL_BAUD_RATE = 9600;
 const SERVIDOR_PORTA = 3000;
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 const serial = async (
     valoresDht11Umidade,
@@ -19,8 +19,8 @@ const serial = async (
             host: 'localhost',
             port: 3306,
             user: 'root',
-            password: 'urubu100',
-            database: 'metricas'
+            password: '271815',
+            database: 'coldtech'
         }
     ).promise();
 
@@ -56,8 +56,12 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO sensores (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave) VALUES (?, ?, ?, ?, ?)',
+                'INSERT INTO medicao ( temperatura ) VALUES (?, ?, ?, ?, ?)',
                 [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
+            );
+            await poolBancoDados.execute(
+                'INSERT INTO medicao (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura2, chave) VALUES (?, ?, ?, ?, ?)',
+                [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura2, chave]
             );
         }
 

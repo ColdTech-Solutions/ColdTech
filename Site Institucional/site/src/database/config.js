@@ -29,8 +29,8 @@ var sqlServerConfig = {
 var mySqlConfig = {
     host: "localhost",
     database: "coldtech",
-    user: "davi",
-    password: "#Gf47148790816",}
+    user: "root",
+    password: "271815",}
 
 function executar(instrucao) {
     // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js

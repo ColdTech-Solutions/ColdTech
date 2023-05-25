@@ -63,11 +63,16 @@
         </section>  -->
         <div class="titulo_grafico">
             <div class="grafico1">
-        <h1>Câmaras e Freezers</h1>
+        <h1>Câmaras</h1>
         <section style="width: 100%;">
-            <canvas id="lm35Temperatura"></canvas>
+            <canvas id="lm35Temperatura1"></canvas>
         </div>
-            <div class="grafico2">
+        <div class="titulo_grafico">
+            <div class="grafico1">
+        <h1>Freezers</h1>
+        <section style="width: 100%;">
+            <canvas id="lm35Temperatura2"></canvas>
+        </div>
       
                         <!-- </section>
             <h1>Sensor Chave</h1>
@@ -202,20 +207,63 @@
 
 
         /* -- lm35Temperatura */
-        var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
-        contextoLm35Temperatura.canvas.width = 1000;
-        contextoLm35Temperatura.canvas.height = 300;
-        var lm35Temperatura = new Chart(
-            contextoLm35Temperatura,
+        var contextoLm35Temperatura1 = document.getElementById('lm35Temperatura1').getContext('2d');
+        contextoLm35Temperatura1.canvas.width = 1000;
+        contextoLm35Temperatura1.canvas.height = 300;
+        var lm35Temperatura1 = new Chart(
+            contextoLm35Temperatura1,
             {
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Temperatura das Câmaras Frias e Freezers',
+                        label: 'Temperatura das Câmaras Frias',
                         type: 'line',
                         borderColor: ['#041A37'],
                         color: ['#B49000', '#041A37'],
                         backgroundColor: ['#041A37']
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+
+         /* -- lm35Temperatura */
+         var contextoLm35Temperatura2 = document.getElementById('lm35Temperatura2').getContext('2d');
+        contextoLm35Temperatura2.canvas.width = 1000;
+        contextoLm35Temperatura2.canvas.height = 300;
+        var lm35Temperatura2 = new Chart(
+            contextoLm35Temperatura2,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura dos Freezers',
+                        type: 'line',
+                        borderColor: ['#B49000'],
+                        color: ['#B49000', '#B49000'],
+                        backgroundColor: ['#B49000']
                     }]
                 },
                 options: {
@@ -292,26 +340,56 @@
             http.open('GET', 'http://localhost:3000/sensores/' + 'lm35/temperatura', false);
             http.send(null);
             var valores = JSON.parse(http.responseText);
-            if (paginacao['lm35/temperatura'] == null) {
-                paginacao['lm35/temperatura'] = 0;
+            if (paginacao['lm35/temperatura1'] == null) {
+                paginacao['lm35/temperatura1'] = 0;
             }
-            if (tempo['lm35/temperatura'] == null) {
-                tempo['lm35/temperatura'] = 0;
+            if (tempo['lm35/temperatura1'] == null) {
+                tempo['lm35/temperatura1'] = 0;
             }
             // Exibir à partir do último elemento exibido anteriormente
-            var ultimaPaginacao = paginacao['lm35/temperatura'];
-            paginacao['lm35/temperatura'] = valores.length;
+            var ultimaPaginacao = paginacao['lm35/temperatura1'];
+            paginacao['lm35/temperatura1'] = valores.length;
             var valores = valores.slice(ultimaPaginacao);
-            valores.forEach((valor) => {
+            valores.forEach((valor1) => {
                 //Máximo de 60 itens exibidos no gráfico
                 if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
                     grafico.data.labels.shift();
                     grafico.data.datasets[0].data.shift();
                 }
 
-                grafico.data.labels.push(tempo['lm35/temperatura']++);
-                grafico.data.datasets[0].data.push(parseFloat(valor));
+                grafico.data.labels.push(tempo['lm35/temperatura1']++);
+                grafico.data.datasets[0].data.push(parseFloat(valor1));
                 grafico.update();
+            })
+        };
+
+        var paginacao2 = {};
+        var tempo2 = {};
+        function obterDados2(grafico2) {
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3000/sensores/' + 'lm35/temperatura', false);
+            http.send(null);
+            var valores2 = JSON.parse(http.responseText);
+            if (paginacao2['lm35/temperatura2'] == null) {
+                paginacao2['lm35/temperatura2'] = 0;
+            }
+            if (tempo2['lm35/temperatura2'] == null) {
+                tempo2['lm35/temperatura2'] = 0;
+            }
+            // Exibir à partir do último elemento exibido anteriormente
+            var ultimaPaginacao2 = paginacao2['lm35/temperatura2'];
+            paginacao2['lm35/temperatura2'] = valores2.length;
+            var valores2 = valores2.slice(ultimaPaginacao2);
+            valores2.forEach((valor2) => {
+                //Máximo de 60 itens exibidos no gráfico
+                if (grafico2.data.labels.length == 10 && grafico2.data.datasets[0].data.length == 10) {
+                    grafico2.data.labels.shift();
+                    grafico2.data.datasets[0].data.shift();
+                }
+
+                grafico2.data.labels.push(tempo2['lm35/temperatura2']++);
+                grafico2.data.datasets[0].data.push(parseFloat(valor2));
+                grafico2.update();
             })
         };
 
@@ -321,7 +399,8 @@
             // obterDados(dht11Umidade, 'dht11/umidade');
             // obterDados(dht11Temperatura, 'dht11/temperatura');
             // obterDados(luminosidade, 'luminosidade');
-            obterDados(lm35Temperatura, 'lm35/temperatura');
+            obterDados(lm35Temperatura1, 'lm35/temperatura1');
+            obterDados2(lm35Temperatura2, 'lm35/temperatura2');
             // obterDados(chave, 'chave');
         }, 1000);
 
