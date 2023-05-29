@@ -133,9 +133,10 @@ function entrar() {
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.TIPO_USUARIO = json.tipo;
 
                     setTimeout(function () {
-                        window.location = "usuario.html";
+                        window.location = "../dashboard/cards.html";
                     },1000); // apenas para exibir o loading
 
                 });

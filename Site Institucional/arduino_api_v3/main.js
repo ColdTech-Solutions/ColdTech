@@ -54,7 +54,7 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO medicao (temperatura, dataHora) VALUES (?, ?)',
+                'INSERT INTO medicao (idMedicao, temperatura, dataHora, fkSensor) VALUES (null, ?, ?, 1)',
                 [lm35Temperatura, new Date()]
             );
             // await poolBancoDados.execute(
