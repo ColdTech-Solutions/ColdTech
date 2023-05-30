@@ -1,6 +1,7 @@
 var database = require("../database/config");
 
 function buscarUltimasMedidas(idSensor, limite_linhas) {
+
         instrucaoSql = `select 
                         temperatura,
                         dataHora,

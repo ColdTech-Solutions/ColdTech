@@ -121,6 +121,7 @@
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.temperatura);
+            dados.datasets[1].data.push(registro.temperatura * 0.1);
         }
 
         console.log('----------------------------------------------')
@@ -170,16 +171,16 @@
                     // // avisoCaptura.innerHTML = ""
 
 
-                    // if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
-                    //     console.log("---------------------------------------------------------------")
-                    //     console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
                     //     avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                     //     console.log("Horário do novo dado capturado:")
                     //     console.log(novoRegistro[0].momento_grafico)
                     //     console.log("Horário do último dado capturado:")
                     //     console.log(dados.labels[dados.labels.length - 1])
                     //     console.log("---------------------------------------------------------------")
-                    // } else {
+                    } else {
                         // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
@@ -187,11 +188,14 @@
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
 
+                        dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura * 0.1); // incluir uma nova medida de umidade
+
                         // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                         // dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                         myChart.update();
-                    // }
+                    }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idSensor, dados, myChart), 2000);

@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="dashboards.css">
 
     <script src="../js/funcoes.js"></script>
-    <script src="./alerta.js"></script>
+    <!-- <script src="./alerta.js"></script> -->
+    <script src="acesso.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -28,13 +29,13 @@
                 <li class="agora">
                     <a href="cards.html">Usuário</a>
                 </li>
-                <li>
+                <li id="dashboard">
                     <a href="dashboard.html">DashBoards</a>
                 </li>
                 <li>
                     <a href="ajuda.html">Ajuda</a>
                 </li>
-                <li>
+                <li id="cadastrar_funcionario">
                     <a href="../funcionariocadastrar.html">Cadastrar Funcionário</a>
                 </li>
                 <li>
@@ -144,6 +145,7 @@
 
 <script>
 
+validar()
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
