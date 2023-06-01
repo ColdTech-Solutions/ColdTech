@@ -7,12 +7,11 @@ const SERVIDOR_PORTA = 3000;
 const HABILITAR_OPERACAO_INSERIR = true;
 
 const serial = async (
-    valoresDht11Umidade,
-    valoresDht11Temperatura,
-    valoresLuminosidade,
+     valoresDht11Umidade,
+     valoresDht11Temperatura,
+     valoresLuminosidade,
     valoresLm35Temperatura,
-   
-    valoresChave
+     valoresChave
 ) => {
     const poolBancoDados = mysql.createPool(
         {
@@ -40,30 +39,31 @@ const serial = async (
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         const valores = data.split(';');
-        const dht11Umidade = parseFloat(valores[0]);
-        const dht11Temperatura = parseFloat(valores[1]);
-        const luminosidade = parseFloat(valores[2]);
+         const dht11Umidade = parseFloat(valores[0]);
+         const dht11Temperatura = parseFloat(valores[1]);
+         const luminosidade = parseFloat(valores[2]);
         const lm35Temperatura = parseFloat(valores[3]);
-        const lm35Temperatura2 = parseFloat(valores[3]);
-        const chave = parseInt(valores[4]);
+        
+         const chave = parseInt(valores[4]);
 
-        valoresDht11Umidade.push(dht11Umidade);
-        valoresDht11Temperatura.push(dht11Temperatura);
-        valoresLuminosidade.push(luminosidade);
+         valoresDht11Umidade.push(dht11Umidade);
+         valoresDht11Temperatura.push(dht11Temperatura);
+         valoresLuminosidade.push(luminosidade);
         valoresLm35Temperatura.push(lm35Temperatura);
-        valoresLm35Temperatura2.push(lm35Temperatura2);
-        valoresChave.push(chave);
+         valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
+            console.log(lm35Temperatura);
+
             await poolBancoDados.execute(
-                'INSERT INTO medicao ( temperatura ) VALUES (?, ?, ?, ?, ?)',
-                [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
+                'INSERT INTO medicao (temperatura, fkSensor, dataHora) VALUES (?, 1, default);',
+                [lm35Temperatura, new Date()]
             );
-            await poolBancoDados.execute(
-                'INSERT INTO medicao (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura2, chave) VALUES (?, ?, ?, ?, ?)',
-                [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura2, chave]
-            );
-        }
+             await poolBancoDados.execute(
+                 'INSERT INTO medicao (temperatura, dataHora) VALUES (?, ?)',
+                 [lm35Temperatura, new Date()]
+             );
+        };
 
     });
     arduino.on('error', (mensagem) => {
@@ -76,7 +76,6 @@ const servidor = (
     valoresDht11Temperatura,
     valoresLuminosidade,
     valoresLm35Temperatura,
-   
     valoresChave
 ) => {
     const app = express();
@@ -88,21 +87,21 @@ const servidor = (
     app.listen(SERVIDOR_PORTA, () => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
-    app.get('/sensores/dht11/umidade', (_, response) => {
-        return response.json(valoresDht11Umidade);
-    });
-    app.get('/sensores/dht11/temperatura', (_, response) => {
-        return response.json(valoresDht11Temperatura);
-    });
-    app.get('/sensores/luminosidade', (_, response) => {
-        return response.json(valoresLuminosidade);
-    });
+     app.get('/sensores/dht11/umidade', (_, response) => {
+         return response.json(valoresDht11Umidade);
+     });
+     app.get('/sensores/dht11/temperatura', (_, response) => {
+         return response.json(valoresDht11Temperatura);
+     });
+     app.get('/sensores/luminosidade', (_, response) => {
+         return response.json(valoresLuminosidade);
+     });
     app.get('/sensores/lm35/temperatura', (_, response) => {
         return response.json(valoresLm35Temperatura);
     });
-    app.get('/sensores/chave', (_, response) => {
-        return response.json(valoresChave);
-    });
+     app.get('/sensores/chave', (_, response) => {
+         return response.json(valoresChave);
+     });
 }
 
 (async () => {
@@ -116,7 +115,6 @@ const servidor = (
         valoresDht11Temperatura,
         valoresLuminosidade,
         valoresLm35Temperatura,
-        
         valoresChave
     );
     servidor(

@@ -27,7 +27,7 @@ function alertar(resposta, idSensor) {
 
     console.log(idSensor === resposta[0].fk_aquario)
     
-    var grauDeAviso ='';
+    var grauDeAviso = '';
 
 
     var limites = {
@@ -74,6 +74,17 @@ function alertar(resposta, idSensor) {
         temp_aquario_1.innerHTML = temp + "°C";
         card = card_1;
 
+        temp_aquario_2.innerHTML = temp + "°C";
+        card = card_2;
+
+        temp_aquario_3.innerHTML = Number(temp * 0.5.toFixed(2)) + "°C";
+        card = card_3;
+
+        temp_aquario_4.innerHTML = Number(temp * 0.5.toFixed(2)) + "°C";
+        card = card_4;
+
+
+
     card.className = classe_temperatura;
 }
 
@@ -81,9 +92,9 @@ function exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor) {
     var indice = alertas.findIndex(item => item.idSensor == idSensor);
 
     if (indice >= 0) {
-        alertas[indice] = { idSensor, temp, grauDeAviso, grauDeAvisoCor }
+        alertas[indice] = {idSensor, temp, grauDeAviso, grauDeAvisoCor}
     } else {
-        alertas.push({ idSensor, temp, grauDeAviso, grauDeAvisoCor });
+        alertas.push({idSensor, temp, grauDeAviso, grauDeAvisoCor});
     }
 
     exibirCards();
@@ -110,7 +121,7 @@ function transformarEmDiv({ idSensor, temp, grauDeAviso, grauDeAvisoCor }) {
     return `<div class="mensagem-alarme">
     <div class="informacao">
     <div class="${grauDeAvisoCor}">&#12644;</div> 
-     <h3>Aquário ${idSensor} está em estado de ${grauDeAviso}!</h3>
+     <h3>Freezer ${idSensor} está em estado de ${grauDeAviso}!</h3>
     <small>Temperatura ${temp}.</small>   
     </div>
     <div class="alarme-sino"></div>

@@ -42,7 +42,7 @@ const serial = async (
         // const dht11Umidade = parseFloat(valores[0]);
         // const dht11Temperatura = parseFloat(valores[1]);
         // const luminosidade = parseFloat(valores[2]);
-        const lm35Temperatura = parseFloat(valores[0]);
+        const lm35Temperatura = parseFloat(valores[3]);
         
         // const chave = parseInt(valores[4]);
 
@@ -53,8 +53,10 @@ const serial = async (
         // valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
+            console.log(lm35Temperatura);
+
             await poolBancoDados.execute(
-                'INSERT INTO medicao (idMedicao, temperatura, dataHora, fkSensor) VALUES (null, ?, ?, 1)',
+                'INSERT INTO medicao (temperatura, fkSensor, dataHora) VALUES (?, 1, ?)',
                 [lm35Temperatura, new Date()]
             );
             // await poolBancoDados.execute(
@@ -70,11 +72,11 @@ const serial = async (
 }
 
 const servidor = (
-    // valoresDht11Umidade,
-    // valoresDht11Temperatura,
-    // valoresLuminosidade,
+    valoresDht11Umidade,
+    valoresDht11Temperatura,
+    valoresLuminosidade,
     valoresLm35Temperatura,
-    // valoresChave
+    valoresChave
 ) => {
     const app = express();
     app.use((request, response, next) => {
@@ -85,41 +87,41 @@ const servidor = (
     app.listen(SERVIDOR_PORTA, () => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
-    // app.get('/sensores/dht11/umidade', (_, response) => {
-    //     return response.json(valoresDht11Umidade);
-    // });
-    // app.get('/sensores/dht11/temperatura', (_, response) => {
-    //     return response.json(valoresDht11Temperatura);
-    // });
-    // app.get('/sensores/luminosidade', (_, response) => {
-    //     return response.json(valoresLuminosidade);
-    // });
+    app.get('/sensores/dht11/umidade', (_, response) => {
+        return response.json(valoresDht11Umidade);
+    });
+    app.get('/sensores/dht11/temperatura', (_, response) => {
+        return response.json(valoresDht11Temperatura);
+    });
+    app.get('/sensores/luminosidade', (_, response) => {
+        return response.json(valoresLuminosidade);
+    });
     app.get('/sensores/lm35/temperatura', (_, response) => {
         return response.json(valoresLm35Temperatura);
     });
-    // app.get('/sensores/chave', (_, response) => {
-    //     return response.json(valoresChave);
-    // });
+    app.get('/sensores/chave', (_, response) => {
+        return response.json(valoresChave);
+    });
 }
 
 (async () => {
-    // const valoresDht11Umidade = [];
-    // const valoresDht11Temperatura = [];
-    // const valoresLuminosidade = [];
+    const valoresDht11Umidade = [];
+    const valoresDht11Temperatura = [];
+    const valoresLuminosidade = [];
     const valoresLm35Temperatura = [];
-    // const valoresChave = [];
+    const valoresChave = [];
     await serial(
-        // valoresDht11Umidade,
-        // valoresDht11Temperatura,
-        // valoresLuminosidade,
+        valoresDht11Umidade,
+        valoresDht11Temperatura,
+        valoresLuminosidade,
         valoresLm35Temperatura,
-        // valoresChave
+        valoresChave
     );
     servidor(
-        // valoresDht11Umidade,
-        // valoresDht11Temperatura,
-        // valoresLuminosidade,
+        valoresDht11Umidade,
+        valoresDht11Temperatura,
+        valoresLuminosidade,
         valoresLm35Temperatura,
-        // valoresChave
+        valoresChave
     );
 })();
