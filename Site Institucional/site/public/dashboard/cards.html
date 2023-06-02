@@ -19,6 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script src="../js/alerta.js"></script>
+
 </head>
 
 <body onload="atualizacaoPeriodica()">
@@ -70,31 +71,31 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Crítico</h4>
-                    <h2>-8°C a -6°C</h2>
+                    <h2>-8°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Emergência</h4>
-                    <h2>-6°C á -4°C</h2>
-                </div>
-                <div class="item-regua ideal">
-                    <h4>Alerta</h4>
-                    <h2>-4°C á -2°C</h2>
+                    <h2>-6°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
+                    <h4>Alerta</h4>
+                    <h2>-4°C</h2>
+                </div>
+                <div class="item-regua ideal">
                     <h4>Ideal</h4>
                     <h2>-2°C á 8°C</h2>
                 </div>
-                <div class="item-regua ideal">
+                <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
-                    <h2>8°C á 10°C</h2>
+                    <h2>9°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Emergência</h4>
-                    <h2>10°C á 12°C</h2>
+                    <h2>12°C</h2>
                 </div>
                 <div class="item-regua perigo-frio">
                     <h4>Crítico</h4>
-                    <h2> 12°C a 15°C</h2>
+                    <h2> 15°C</h2>
                 </div>
 
 
@@ -103,31 +104,31 @@
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Crítico</h4>
-                    <h2>-26°C á -24°C</h2>
+                    <h2>-26°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Emergência</h4>
-                    <h2>-24°C á -22°C</h2>
-                </div>
-                <div class="item-regua ideal">
-                    <h4>Alerta</h4>
-                    <h2>-22°C á -20°C</h2>
+                    <h2>-24°C</h2>
                 </div>
                 <div class="item-regua alerta-quente">
+                    <h4>Alerta</h4>
+                    <h2>-22°C</h2>
+                </div>
+                <div class="item-regua ideal">
                     <h4>Ideal</h4>
                     <h2>-20°C á -16°C</h2>
                 </div>
-                <div class="item-regua ideal">
+                <div class="item-regua alerta-quente">
                     <h4>Alerta</h4>
-                    <h2>-16°C á -13°C</h2>
+                    <h2>-15°C</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Emergência</h4>
-                    <h2>-13°C á -10°C</h2>
+                    <h2>-13°C</h2>
                 </div>
                 <div class="item-regua perigo-frio">
                     <h4>Crítico</h4>
-                    <h2> -10°C a -7°C</h2>
+                    <h2> -10°C</h2>
                 </div>
             </div>
 
@@ -135,20 +136,19 @@
                 <div class="card">
                     <h1 style="color: white;">Freezer 1</h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_1"></div>
-                </div>
-                <div class="card">
-                    <h1 style="color: white;">Freezer 2</h1>
-                    <div class="temperatura">
                         <p id="temp_aquario_2">-°C</p>
                     </div>
-                    <div class="cor-alerta" id="card_2"></div>
-
+                    <div class="cor-alerta2" id="card_1"></div>
                 </div>
                 <div class="card">
                     <h1 style="color: white;">Câmara 1</h1>
+                    <div class="temperatura">
+                        <p id="temp_aquario_1">-°C</p>
+                    </div>
+                    <div class="cor-alerta" id="card_2"></div>
+                </div>
+                <!-- <div class="card">
+                    <h1 style="color: white;">Câmara 1</h1> 
                     <div class="temperatura">
                         <p id="temp_aquario_3">-°C</p>
                     </div>
@@ -160,7 +160,7 @@
                         <p id="temp_aquario_4">-°C</p>
                     </div>
                     <div class="cor-alerta" id="card_4"></div>
-                </div>
+                </div> -->
 
             </div>
 

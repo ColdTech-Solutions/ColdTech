@@ -1,4 +1,5 @@
 var alertas = [];
+// var alertas2 = [];
 
 function obterdados(idSensor) {
     fetch(`/medidas/tempo-real/${idSensor}`)
@@ -31,61 +32,132 @@ function alertar(resposta, idSensor) {
 
 
     var limites = {
-        muito_quente: 15,
-        quente: 10,
-        ideal: -2,
-        frio: -18,
-        muito_frio: -50
+      criticoMin: -26,
+      emergenciaMin: -24,
+      alertaMin: -20,
+      ideal: -15,
+      alertaMax: -15,
+      emergenciaMax: -13,
+      criticoMax: -10
     };
+    var limites2 = {
+        criticoMin2: -8,
+        emergenciaMin2: -6,
+        alertaMin2: -4,
+        ideal2: 7,
+        alertaMax2: 9,
+        emergenciaMax2: 12,
+        criticoMax2: 15
+      };
+
 
     var classe_temperatura = 'cor-alerta';
+    var classe_temperatura2 = 'cor-alerta2';
 
-    if (temp >= limites.muito_quente) {
-        classe_temperatura = 'cor-alerta perigo-quente';
+
+    if (temp >= limites.criticoMax) {
+        classe_temperatura = 'cor-alerta perigo-frio';
         grauDeAviso = 'perigo quente'
-        grauDeAvisoCor = 'cor-alerta perigo-quente'
+        grauDeAvisoCor = 'cor-alerta perigo-frio'
         exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
     }
-    else if (temp < limites.muito_quente && temp >= limites.quente) {
+    else if (temp >= limites.emergenciaMax) {
+        classe_temperatura = 'cor-alerta alerta-frio';
+        grauDeAviso = 'alerta quente'
+        grauDeAvisoCor = 'cor-alerta alerta-frio'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if(temp >= limites.alertaMax){
         classe_temperatura = 'cor-alerta alerta-quente';
         grauDeAviso = 'alerta quente'
         grauDeAvisoCor = 'cor-alerta alerta-quente'
         exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
     }
-    else if (temp < limites.quente && temp > limites.frio) {
+    else if (temp <= limites.ideal) {
         classe_temperatura = 'cor-alerta ideal';
         removerAlerta(idSensor);
     }
-    else if (temp <= limites.frio && temp > limites.muito_frio) {
+    else if (temp <= limites.alertaMin) {
+        classe_temperatura = 'cor-alerta alerta-quente';
+        grauDeAviso = 'alerta frio'
+        grauDeAvisoCor = 'cor-alerta alerta-quente'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if (temp <= limites.emergenciaMin) {
         classe_temperatura = 'cor-alerta alerta-frio';
         grauDeAviso = 'alerta frio'
         grauDeAvisoCor = 'cor-alerta alerta-frio'
         exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
     }
-    else if (temp <= limites.muito_frio) {
+    else if (temp <= limites.criticoMin) {
         classe_temperatura = 'cor-alerta perigo-frio';
         grauDeAviso = 'perigo frio'
         grauDeAvisoCor = 'cor-alerta perigo-frio'
         exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
     }
 
-    var card;
+    // validações da Câmara
+    if (temp >= limites2.criticoMax2) {
+        classe_temperatura2 = 'cor-alerta perigo-frio';
+        grauDeAviso = 'perigo quente'
+        grauDeAvisoCor = 'cor-alerta perigo-frio'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if (temp >= limites2.emergenciaMax2) {
+        classe_temperatura2 = 'cor-alerta alerta-frio';
+        grauDeAviso = 'alerta quente'
+        grauDeAvisoCor = 'cor-alerta alerta-frio'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if(temp >= limites2.alertaMax2){
+        classe_temperatura2 = 'cor-alerta alerta-quente';
+        grauDeAviso = 'alerta quente'
+        grauDeAvisoCor = 'cor-alerta alerta-quente'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if (temp <= limites2.ideal2) {
+        classe_temperatura2 = 'cor-alerta ideal';
+        removerAlerta(idSensor);
+    }
+    else if (temp <= limites2.alertaMin2) {
+        classe_temperatura2 = 'cor-alerta alerta-quente';
+        grauDeAviso = 'alerta frio'
+        grauDeAvisoCor = 'cor-alerta alerta-quente'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if (temp <= limites2.emergenciaMin2) {
+        classe_temperatura2 = 'cor-alerta alerta-frio';
+        grauDeAviso = 'alerta frio'
+        grauDeAvisoCor = 'cor-alerta alerta-frio'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
+    else if (temp <= limites2.criticoMin2) {
+        classe_temperatura2 = 'cor-alerta perigo-frio';
+        grauDeAviso = 'perigo frio'
+        grauDeAvisoCor = 'cor-alerta perigo-frio'
+        exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor)
+    }
 
-        temp_aquario_1.innerHTML = temp + "°C";
+
+
+
+
+    var card;
+    var resultado = Number(temp * 0.1);
+
+        temp_aquario_1.innerHTML = `${resultado.toFixed(2)} °C`;
         card = card_1;
 
         temp_aquario_2.innerHTML = temp + "°C";
         card = card_2;
 
-        temp_aquario_3.innerHTML = Number(temp * 0.5.toFixed(2)) + "°C";
-        card = card_3;
+        // temp_aquario_3.innerHTML = Number(temp * 0.4.toFixed(2)) + "°C";
+        // card = card_3;
 
-        temp_aquario_4.innerHTML = Number(temp * 0.5.toFixed(2)) + "°C";
-        card = card_4;
-
-
-
-    card.className = classe_temperatura;
+        // temp_aquario_4.innerHTML = Number(temp * 0.4.toFixed(2)) + "°C";
+        // card = card_4;
+    temp_aquario_2.className = classe_temperatura;
+    temp_aquario_1.className = classe_temperatura2;
 }
 
 function exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor) {
@@ -103,14 +175,14 @@ function exibirAlerta(temp, idSensor, grauDeAviso, grauDeAvisoCor) {
 // que pode ser inserido clicando com o seu teclado em alt+255 ou pelo código adicionado acima.
 }
 
+
 function removerAlerta(idSensor) {
     alertas = alertas.filter(item => item.idSensor != idSensor);
     exibirCards();
 }
- 
 function exibirCards() {
     alerta.innerHTML = '';
-
+    
     for (var i = 0; i < alertas.length; i++) {
         var mensagem = alertas[i];
         alerta.innerHTML += transformarEmDiv(mensagem);
@@ -125,5 +197,5 @@ function transformarEmDiv({ idSensor, temp, grauDeAviso, grauDeAvisoCor }) {
     <small>Temperatura ${temp}.</small>   
     </div>
     <div class="alarme-sino"></div>
-    </div>`;
+    </div>`
 }

@@ -197,12 +197,31 @@ body {
 }
 
 .alerta-quente {
-  background-color: green;
+  background-color: yellow;
 }
 
 .ideal {
+  background-color: green;
+}
+
+/* Novo CSS da Câmara */
+
+.perigo-frio2 {
+  background-color: rgb(212, 0, 0);
+}
+
+.alerta-frio2 {
+  background-color: rgb(255, 85, 24);
+}
+
+.alerta-quente2 {
   background-color: yellow;
 }
+
+.ideal2 {
+  background-color: green;
+}
+
 
 .dash h1{
   text-align: center;
@@ -243,7 +262,7 @@ body {
   margin: 0;
   font-size: 50px;
   font-weight: lighter;
-  text-align: left;
+  text-align: right;
 }
 
 .cards h1 {
@@ -260,9 +279,18 @@ body {
   margin: 5px;
   margin-left: 20px;
   width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cor-alerta {
+  width: 13%;
+  height: 30%;
+  border-radius: 50%;
+  display: inline-block;
+}
+.cor-alerta2 {
   width: 13%;
   height: 30%;
   border-radius: 50%;
