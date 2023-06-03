@@ -206,7 +206,7 @@ body {
 
 /* Novo CSS da Câmara */
 
-.perigo-frio2 {
+/* .perigo-frio2 {
   background-color: rgb(212, 0, 0);
 }
 
@@ -220,7 +220,7 @@ body {
 
 .ideal2 {
   background-color: green;
-}
+} */
 
 
 .dash h1{
@@ -284,12 +284,12 @@ body {
   justify-content: space-between;
 }
 
-.cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50%;
+ .cor-alerta {
+  /* width: 13%;
+  height: 30%; */
+  /* border-radius: 50%; */
   display: inline-block;
-}
+} 
 .cor-alerta2 {
   width: 13%;
   height: 30%;

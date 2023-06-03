@@ -97,14 +97,14 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Temperatura Freezer',
+                label: 'Temperatura Câmara 1',
                 data: [],
                 fill: false,
                 borderColor: '#041A37',
                 tension: 0.1
             },
             {
-                label: 'Temperatura Câmara',
+                label: 'Temperatura Câmara 2',
                 data: [],
                 fill: false,
                 borderColor: '#B49000',
@@ -121,7 +121,7 @@
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.temperatura);
-            dados.datasets[1].data.push(registro.temperatura * 0.1);
+            dados.datasets[1].data.push(registro.temperatura - 5);
         }
 
         console.log('----------------------------------------------')
@@ -189,7 +189,7 @@
                         dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
 
                         dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[1].data.push(novoRegistro[0].temperatura * 0.1); // incluir uma nova medida de umidade
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura - 5); // incluir uma nova medida de umidade
 
                         // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                         // dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
