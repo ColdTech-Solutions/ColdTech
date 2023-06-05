@@ -46,7 +46,7 @@ void loop()
   lm35_temperatura = lm35_temperatura * 0.00488;
   lm35_temperatura = lm35_temperatura * 100;
 
-  lm35_temperatura = lm35_temperatura - 40;
+  lm35_temperatura = lm35_temperatura - 28;
   
   float lm35_temperatura2 = lm35_temperatura;
   Serial.print(lm35_temperatura);

@@ -43,17 +43,17 @@ function alertar(resposta, idSensor) {
     // };
     var limites2 = {
         criticoMin2: -8,
-        emergenciaMin2: -6,
-        alertaMin2: -4,
-        ideal2: 7,
+        emergenciaMin2: -5,
+        alertaMin2: -2,
+        ideal2: 8,
         alertaMax2: 9,
         emergenciaMax2: 12,
         criticoMax2: 15
     };
 
 
-    var classe_temperatura = 'cor-alerta';
-    // var classe_temperatura2 = 'cor-alerta';
+    // var classe_temperatura = 'cor-alerta';
+    var classe_temperatura2 = 'cor-alerta';
 
 
     // if (temp >= limites.criticoMax) {
@@ -144,7 +144,7 @@ function alertar(resposta, idSensor) {
 
 
     var card;
-    var resultado_temp = Number(temp - 5)
+    var resultado_temp = Number(temp - 1)
     var tempe = temp.toFixed(0);
 
     temp_aquario_1.innerHTML = tempe + "°C";
@@ -192,7 +192,7 @@ function exibirCards() {
 }
 
 function transformarEmDiv({ idSensor, temp, grauDeAviso, grauDeAvisoCor}) {
-    var resultado_temp = Number(temp - 5);
+    var resultado_temp = Number(temp - 1);
     return `<div class="mensagem-alarme">
     <div class="informacao">
     <div class="${grauDeAvisoCor}">&#12644;</div> 

@@ -121,7 +121,7 @@
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.temperatura);
-            dados.datasets[1].data.push(registro.temperatura - 5);
+            dados.datasets[1].data.push(registro.temperatura - 1);
         }
 
         console.log('----------------------------------------------')
