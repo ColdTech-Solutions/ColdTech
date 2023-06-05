@@ -287,7 +287,7 @@ body {
  .cor-alerta {
   /* width: 13%;
   height: 30%; */
-  /* border-radius: 50%; */
+  border-radius: 15%;
   display: inline-block;
 } 
 .cor-alerta2 {

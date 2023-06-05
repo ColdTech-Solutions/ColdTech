@@ -144,7 +144,7 @@ function alertar(resposta, idSensor) {
 
 
     var card;
-    var resultado_temp = Number(temp - 1)
+    var resultado_temp = Number(temp - 0.5)
     var tempe = temp.toFixed(0);
 
     temp_aquario_1.innerHTML = tempe + "°C";
@@ -192,12 +192,12 @@ function exibirCards() {
 }
 
 function transformarEmDiv({ idSensor, temp, grauDeAviso, grauDeAvisoCor}) {
-    var resultado_temp = Number(temp - 1);
+    var resultado_temp = Number(temp - 0.5);
     return `<div class="mensagem-alarme">
     <div class="informacao">
     <div class="${grauDeAvisoCor}">&#12644;</div> 
      <h3>Câmara ${idSensor} está em estado de ${grauDeAviso}!</h3>
-    <small>Temperatura ${temp}.</small>   
+    <small>Temperatura ${temp}°C.</small>   
     </div>
     <div class="alarme-sino"></div>
     </div>` +
@@ -205,7 +205,7 @@ function transformarEmDiv({ idSensor, temp, grauDeAviso, grauDeAvisoCor}) {
     <div class="informacao">
     <div class="${grauDeAvisoCor}">&#12644;</div> 
      <h3>Câmara 2 está em estado de ${grauDeAviso}!</h3>
-    <small>Temperatura ${resultado_temp}.</small>   
+    <small>Temperatura ${resultado_temp}°C.</small>   
     </div>
     <div class="alarme-sino"></div>
     </div>` 

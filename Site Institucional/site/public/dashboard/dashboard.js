@@ -121,7 +121,7 @@
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.temperatura);
-            dados.datasets[1].data.push(registro.temperatura - 1);
+            dados.datasets[1].data.push(registro.temperatura - 0.5);
         }
 
         console.log('----------------------------------------------')
@@ -171,7 +171,7 @@
                     // // avisoCaptura.innerHTML = ""
 
 
-                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 0.5]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
                     //     avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
@@ -189,7 +189,7 @@
                         dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
 
                         dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[1].data.push(novoRegistro[0].temperatura - 5); // incluir uma nova medida de umidade
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura - 0.5); // incluir uma nova medida de umidade
 
                         // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                         // dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
